@@ -1,5 +1,6 @@
 const express = require('express')
 const routes = express.Router()
+const instructors = require('./instructors')
 
 routes.get('/', function(req, res) {
     return res.redirect("/instructors")
@@ -13,17 +14,11 @@ routes.get('/instructors/create', function(req, res) {
     return res.render('instructors/create')
 })
 
-routes.post('/instructors', function(req, res) {
-    const keys = Object.keys(req.body)
+routes.get('/instructors/:id', instructors.show)
 
-    for (key of keys) {
-        if (req.body[key] == "") {
-            return res.send("Por favor, preencha todos os dados")
-        }
-    }
+routes.get('/instructors/:id/edit', instructors.edit)
 
-    return res.send(req.body)
-})
+routes.post('/instructors', instructors.post)
 
 routes.get('/members', function(req, res) {
     return res.send("members")
