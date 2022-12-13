@@ -8,7 +8,7 @@
         "browsersync": "browser-sync start --proxy https://5000-dfa7707c-4c39-447e-8f9b-adf678894075.ws-us02.gitpod.io --files 'public,views'"
     },
     "dependencies": {
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "nunjucks": "^3.2.0"
     },
     "devDependencies": {
